@@ -46,11 +46,11 @@ public class Player {
         if (resourse == 0) return; // 할당을 못받았을 경우
         // 공격 과정
         while (resourse != 0) {
-            String name = new String(NAME);
             resourseToUse = TRIBE.useResourse(resourse); // 사용할 자원양
             product_energy = TRIBE.makeEnergy(resourseToUse); // 에너지 생성
             team_resourse = TEAM.getResourse();
             team_energy = TEAM.getEnergy();
+            energy += product_energy; // 플레이어가 생산한 에너지
 
             Player target = Team.randomPlayer(enemy); // 타겟 적 설정
             energy += product_energy; // 생산한 에너지를 플레이어 총 에너지에 더함.
