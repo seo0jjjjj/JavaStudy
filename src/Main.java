@@ -7,9 +7,10 @@ public class Main {
         final String PARTY = "\uD83C\uDF89";
         final int MIN_M = 5; // 팀원수 최대 값
         final int MAX_M = 9; // 팀원수 최소 값
-        final int MIN_R = 10; // 최소한 자원
+        final int MIN_R = 100; // 최소한 자원
+
         int numOfMembers = MIN_M + random.nextInt(MAX_M-MIN_M); // 팀원 맴버 수 결정(최대 9, 최소5)
-        int gameResourse = MIN_R +random.nextInt(10); // 팀별 자원 결정(1000~2000)
+        int gameResourse = MIN_R +random.nextInt(100); // 팀별 자원 결정
         int pid = 20220000; // 플레이어에게 할당될 고유 번호
 
         // 팀 생성
