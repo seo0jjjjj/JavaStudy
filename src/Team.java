@@ -12,45 +12,27 @@ public class Team {
         this.resourse = resourse;
         random = new Random();
     }
-
+    // 랜덤한 플레이어를 뽑는 함수
     public static Player randomPlayer(Team enemy) {
         int num = (int) (Math.random() * 100) % enemy.playerList.size();
         return enemy.getPlayer(num);
     }
 
     //getter
-    public int getSize() {
-        return this.playerList.size();
-    }
-
-    public int getEnergy() {
-        return energy;
-    }
-
-    public int getResourse() {
-        return resourse;
-    }
-
-    public String getName() {
-        return name;
-    }
-
+    public int getSize() { return this.playerList.size(); }
+    public int getEnergy() { return energy;}
+    public int getResourse() {return resourse;}
+    public String getName() {return name;}
     public ArrayList<Player> getplayerList() {
         return playerList;
     }
-
     public Player getPlayer(int num) {
         return playerList.get(num);
     }
 
     //setter
-    public void setEnergy(int e) {
-        energy = e;
-    }
-
-    public void setResourse(int r) {
-        resourse = r;
-    }
+    public void setEnergy(int e) { energy = e;}
+    public void setResourse(int r) {resourse = r;}
 
     //선수 결정
     public void choosePlayer(int pid, ArrayList<String> nameList) {
@@ -99,8 +81,7 @@ public class Team {
         }
         print();
     }
-
-
+    //팀원과 자원 분배량 출력
     private void print() {
         int i = 0;
         System.out.println("-----------------------------------------------------------------------------");
@@ -113,6 +94,6 @@ public class Team {
                     String.valueOf(i++), p.getId(), p.getName(), p.getTribeName(), String.valueOf(p.getResourse()));
             System.out.println();
         }
-
+        System.out.println();
     }
 }

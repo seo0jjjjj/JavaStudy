@@ -17,20 +17,19 @@ public class Tribe {
         r_MIN = 1;
     }
 
-
-    //최소~최대값사이의 자원소모 + 자식클래스에서 오버라이딩 불가능
+    //종족별 자원 소모량 계산하는 함수 + 자식클래스에서 오버라이딩 불가능
     public final int useResourse(int r) {
         Random random = new Random();
         use = r_MIN + random.nextInt(r) % (r_MAX - r_MIN + 1); // 사용한 자원
         return use;
     }
 
-    //자원 R로 애너지 생산 계산
+    //자원 R을 사용하여 애너지 생산 계산
     public int makeEnergy(int energy) {
         return energy;
     }
 
-    // 종족을 랜덤으로 정해주는 함수
+    // 종족을 랜덤으로 정해주는 정적 함수
     public static Tribe randomTribe() {
         int i = (int) ((Math.random() * 10) % 3); // 0~2의 랜덤값.
 
