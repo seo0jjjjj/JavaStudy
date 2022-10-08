@@ -50,10 +50,9 @@ public class Player {
             product_energy = TRIBE.makeEnergy(resourseToUse); // 에너지 생성
             team_resourse = TEAM.getResourse();
             team_energy = TEAM.getEnergy();
-            energy += product_energy; // 플레이어가 생산한 에너지
+            energy += product_energy; // 생산한 에너지를 플레이어 총 에너지에 더함.
 
             Player target = Team.randomPlayer(enemy); // 타겟 적 설정
-            energy += product_energy; // 생산한 에너지를 플레이어 총 에너지에 더함.
             TEAM.setEnergy(team_energy + product_energy); // 팀 총 에너지에 추가
 
             System.out.printf("%6s(%7s)\t%2s\t%6s(%7s) %10s %12s %10s(%4s) \n",
