@@ -4,12 +4,12 @@ import java.util.Random;
 public class Team {
     private ArrayList<Player> playerList = new ArrayList<Player>();
     private String name;
-    private int size, energy, resourse;
+    private int size, energy, resource;
     private Random random;
 
-    public Team(String name, int resourse) {
+    public Team(String name, int resource) {
         this.name = name;
-        this.resourse = resourse;
+        this.resource = resource;
         random = new Random();
     }
     // 랜덤한 플레이어를 뽑는 함수
@@ -21,7 +21,7 @@ public class Team {
     //getter
     public int getSize() { return this.playerList.size(); }
     public int getEnergy() { return energy;}
-    public int getResourse() {return resourse;}
+    public int getResource() {return resource;}
     public String getName() {return name;}
     public ArrayList<Player> getplayerList() {
         return playerList;
@@ -32,7 +32,7 @@ public class Team {
 
     //setter
     public void setEnergy(int e) { energy = e;}
-    public void setResourse(int r) {resourse = r;}
+    public void setResourse(int r) {resource = r;}
 
     //선수 결정
     public void choosePlayer(int pid, ArrayList<String> nameList) {
@@ -50,7 +50,7 @@ public class Team {
         // 출력
         System.out.println("----------------------------------------------------------------------------------------");
         System.out.printf("%50s\n", getName() + "팀의 공격 \uD83E\uDD4A");
-        System.out.printf("%13s \t%2s %13s %13s %10s %10s", "공격자","무기", "피해자", "팀 자원(" + resourse + ")","소모한 자원", "생산한 에너지") ;
+        System.out.printf("%13s \t%2s %13s %13s %10s %10s", "공격자","무기", "피해자", "팀 자원(" + resource + ")","소모한 자원", "생산한 에너지") ;
         System.out.println();
         System.out.println("----------------------------------------------------------------------------------------");
 
@@ -66,17 +66,17 @@ public class Team {
 
     // 플레이어 자원 초기화 함수
     public void divideResources() {
-        int minimum_resourse = resourse / playerList.size(); // 최소 분배량 : n분의1개
-        int remain_resourse = resourse - (minimum_resourse * playerList.size()); // 최소분배량을 제외한 나머지 랜덤 분배량
+        int minimum_resource = resource / playerList.size(); // 최소 분배량 : n분의1개
+        int remain_resource = resource - (minimum_resource * playerList.size()); // 최소분배량을 제외한 나머지 랜덤 분배량
         for (Player p : playerList) { // 모든 플레이어에게 기본값 부여
-            p.addResourse(minimum_resourse);
+            p.addResource(minimum_resource);
         }
 
-        while (remain_resourse != 0) { // 모든 남은 분배량을 소모할 때까지
+        while (remain_resource != 0) { // 모든 남은 분배량을 소모할 때까지
             for (Player p : playerList) { // 모든 플레이어에게
-                int random_resourse = random.nextInt(remain_resourse + 1); //랜덤 갯수만큼 배분
-                p.addResourse(random_resourse); // 추가로 부여할 랜덤 값
-                remain_resourse -= random_resourse;
+                int random_resource = random.nextInt(remain_resource + 1); //랜덤 갯수만큼 배분
+                p.addResource(random_resource); // 추가로 부여할 랜덤 값
+                remain_resource -= random_resource;
             }
         }
         print();
@@ -86,12 +86,12 @@ public class Team {
         int i = 0;
         System.out.println("-----------------------------------------------------------------------------");
         System.out.printf("%40s\n", getName() + "팀 맴버목록");
-        System.out.printf("%5s %20s %10s %15s %10s", "번호", "PID", "이름", "종족", "자원(" + resourse + ")");
+        System.out.printf("%5s %20s %10s %15s %10s", "번호", "PID", "이름", "종족", "자원(" + resource + ")");
         System.out.println();
         System.out.println("-----------------------------------------------------------------------------");
         for (Player p : playerList) {
             System.out.format("%5s %20s %10s %15s %10s",
-                    String.valueOf(i++), p.getId(), p.getName(), p.getTribeName(), String.valueOf(p.getResourse()));
+                    String.valueOf(i++), p.getId(), p.getName(), p.getTribeName(), String.valueOf(p.getResource()));
             System.out.println();
         }
         System.out.println();
