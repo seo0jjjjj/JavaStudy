@@ -74,6 +74,7 @@ public class Team {
 
         while (remain_resource != 0) { // 모든 남은 분배량을 소모할 때까지
             for (int i=0; i<playerList.size(); i++) { // 모든 플레이어에게
+                random = new Random();
                 int random_resource = random.nextInt(remain_resource + 1); //랜덤 갯수만큼 배분
                 int j = random.nextInt(playerList.size()-1);
                 playerList.get(j).addResource(random_resource); // 추가로 부여할 랜덤 값
