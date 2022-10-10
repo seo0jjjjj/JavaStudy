@@ -5,8 +5,8 @@ import java.util.Random;
 public class Tribe {
     public String attackName = "";
     public String name;
-    protected int r_MIN; // 에너지 사용에 드는 최대 자원
-    protected int r_MAX;// 에너지 사용에 드는 최소 자원
+    protected int r_MIN; // 에너지 사용에 드는 최소 자원
+    protected int r_MAX;// 에너지 사용에 드는 최대 자원
     protected int use;
     public String emoji;
 

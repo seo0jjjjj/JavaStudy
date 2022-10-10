@@ -4,12 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
         Random random = new Random();
-        final int MIN_M = 5; // 팀원수 최대 값
-        final int MAX_M = 9; // 팀원수 최소 값
-        final int MIN_R = 20; // 최소한 자원
+        final int MIN_M = 5; // 팀원수 최소 값
+        final int MAX_M = 9; // 팀원수 최대 값
+        final int MIN_R = 40; // 최소한 자원
 
         int numOfMembers = MIN_M + random.nextInt(MAX_M - MIN_M+1); // 팀원 맴버 수 결정(최대 9, 최소5)
-        int gameResourse = MIN_R + random.nextInt(20); // 팀별 자원 결정
+        int gameResourse = MIN_R + random.nextInt(40); // 팀별 자원 결정
         int pid = 20220000; // 플레이어에게 할당될 고유 번호
 
         // 팀 생성
