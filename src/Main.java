@@ -9,19 +9,18 @@ public class Main {
         final int MIN_R = 40; // 최소한 자원
 
         int numOfMembers = MIN_M + random.nextInt(MAX_M - MIN_M+1); // 팀원 맴버 수 결정(최대 9, 최소5)
-        int gameResourse = MIN_R + random.nextInt(40); // 팀별 자원 결정
+        int gameResource = MIN_R + random.nextInt(40); // 팀별 자원 결정
         int pid = 20220000; // 플레이어에게 할당될 고유 번호
 
         // 팀 생성
-        Team teamA = new Team("A", gameResourse); // 빨강 팀
-        Team teamB = new Team("B", gameResourse); // 파랑 팀
+        Team teamA = new Team("A", gameResource); // 빨강 팀
+        Team teamB = new Team("B", gameResource); // 파랑 팀
 
         // 랜덤 이름 목록
         String[] names = {"임민석", "봉보경", "하정철", "송진경", "문세영",
                 "황영희", "손문영", "하연숙", "서하영", "표홍식", "권윤옥", "문희아",
                 "하승윤", "홍은용", "윤민정", "고윤재", "예병하", "표남기"}; // 플레이어 이름
-        ArrayList<String> nameList = new ArrayList<String>();
-        for (String name : names) nameList.add(name); // names를 이용해 nameList 생성
+        ArrayList<String> nameList = new ArrayList<>(Arrays.asList(names));// names 를 이용해 nameList 생성
 
 
         // 팀원 뽑기
@@ -48,7 +47,7 @@ public class Main {
 
         System.out.println("-----------------------------------------------------------------------------");
         System.out.printf("%40s\n", "게임 결과 안내");
-        System.out.printf("-----------------------------------------------------------------------------\n\t");
+        System.out.println("-----------------------------------------------------------------------------\n\t");
 
         if (teamA.getEnergy() > teamB.getEnergy()) {
             System.out.printf(PARTY + "  %s 팀이 %s 팀을 상대로 %d의 격차로 우승했습니다.\n", teamA.getName(), teamB.getName(), teamA.getEnergy() - teamB.getEnergy());
