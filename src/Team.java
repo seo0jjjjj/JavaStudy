@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Team {
-    private ArrayList<Player> playerList = new ArrayList<Player>();
-    private String name;
-    private int size, energy, resource;
+    private ArrayList<Player> playerList = new ArrayList<>();
+    private final String name;
+    private int energy, resource;
     private Random random;
 
     public Team(String name, int resource) {
@@ -73,9 +73,10 @@ public class Team {
         }
 
         while (remain_resource != 0) { // 모든 남은 분배량을 소모할 때까지
-            for (Player p : playerList) { // 모든 플레이어에게
+            for (int i=0; i<playerList.size(); i++) { // 모든 플레이어에게
                 int random_resource = random.nextInt(remain_resource + 1); //랜덤 갯수만큼 배분
-                p.addResource(random_resource); // 추가로 부여할 랜덤 값
+                int j = random.nextInt(playerList.size()-1);
+                playerList.get(j).addResource(random_resource); // 추가로 부여할 랜덤 값
                 remain_resource -= random_resource;
             }
         }
@@ -91,7 +92,7 @@ public class Team {
         System.out.println("-----------------------------------------------------------------------------");
         for (Player p : playerList) {
             System.out.format("%5s %20s %10s %15s %10s",
-                    String.valueOf(i++), p.getId(), p.getName(), p.getTribeName(), String.valueOf(p.getResource()));
+                    i++, p.getId(), p.getName(), p.getTribeName(), String.valueOf(p.getResource()));
             System.out.println();
         }
         System.out.println();
