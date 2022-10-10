@@ -18,7 +18,7 @@ public class Tribe {
     }
 
     //종족별 자원 소모량 계산하는 함수 + 자식클래스에서 오버라이딩 불가능
-    public final int useResourse(int r) {
+    public final int useResource(int r) {
         Random random = new Random();
         use = r_MIN + random.nextInt(r) % (r_MAX - r_MIN + 1); // 사용한 자원
         return use;
@@ -33,19 +33,12 @@ public class Tribe {
     public static Tribe randomTribe() {
         int i = (int) ((Math.random() * 10) % 3); // 0~2의 랜덤값.
 
-        Tribe tribe = new Tribe();
-        switch (i) {
-            case 0:
-                tribe = new Terran();
-                break;
-            case 1:
-                tribe = new Zerg();
-                break;
-            case 2:
-                tribe = new Protoss();
-                break;
-        }
-        return tribe;
+        return switch (i) {
+            case 0 -> new Terran();
+            case 1 -> new Zerg();
+            case 2 -> new Protoss();
+            default -> new Tribe();
+        };
     }
 
 }
