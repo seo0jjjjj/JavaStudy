@@ -93,7 +93,7 @@ public class Team {
         System.out.println("-----------------------------------------------------------------------------");
         for (Player p : playerList) {
             System.out.format("%5s %20s %10s %15s %10s",
-                    i++, p.getId(), p.getName(), p.getTribeName(), String.valueOf(p.getResource()));
+                    i++, p.getId(), p.getName(), p.getTribeName(), p.getResource());
             System.out.println();
         }
         System.out.println();
