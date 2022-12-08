@@ -1,3 +1,5 @@
+package starcraftGame;
+
 import java.util.*;
 
 public class Main {

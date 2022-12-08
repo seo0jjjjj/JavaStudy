@@ -1,4 +1,8 @@
-package Tribes;
+package starcraftGame;
+
+import starcraftGame.Tribes.Protoss;
+import starcraftGame.Tribes.Terran;
+import starcraftGame.Tribes.Zerg;
 
 import java.util.Random;
 

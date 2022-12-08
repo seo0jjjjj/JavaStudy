@@ -1,4 +1,4 @@
-import Tribes.Tribe;
+package starcraftGame;
 
 public class Player {
     private final int PID; // 고유 번호

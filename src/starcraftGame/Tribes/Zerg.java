@@ -1,4 +1,6 @@
-package Tribes;
+package starcraftGame.Tribes;
+
+import starcraftGame.Tribe;
 
 public class Zerg extends Tribe {
     public Zerg() {

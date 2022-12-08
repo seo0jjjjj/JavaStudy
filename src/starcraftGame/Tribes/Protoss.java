@@ -1,7 +1,9 @@
-package Tribes;
+package starcraftGame.Tribes;
 
 
-class Protoss extends Tribe {
+import starcraftGame.Tribe;
+
+public class Protoss extends Tribe {
     public Protoss() {
         attackName = "활 공격";
         name = "Protoss";
