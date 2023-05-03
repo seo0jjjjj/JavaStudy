@@ -1,6 +1,6 @@
 # Chapter 27: 함수형 인터페이스
 
-# 함수형 인터페이스
+## 함수형 인터페이스
 
 - 추상 메소드가 딱 하나만 존재하는 인터페이스
 
@@ -23,11 +23,11 @@ class OneParamNoReturn {
 }
 ```
 
-## 어노테이션
+### 어노테이션
 
 `@FunctionalInterface` : 함수형 인터페이스의 조건을 갖추었는지에 대한 검사를 컴파일러에게 요청
 
-# 27-2. 정의되어 있는 함수형 인터페이스
+## 27-2. 정의되어 있는 함수형 인터페이스
 
 | 클래스 | 함수 | 설명 | 매개변수 | 반환 |
 | --- | --- | --- | --- | --- |
@@ -62,7 +62,7 @@ public static void main(String[] args) {
 }
 ```
 
-## Predicate<T>를 구체화하고 다양화 한 인터페이스들
+### Predicate<T>를 구체화하고 다양화 한 인터페이스들
 
 - 박싱, 언박싱 과정이 필요 없어짐
 
@@ -98,7 +98,7 @@ public static void main(String[] args) {
 }
 ```
 
-## Supplier<T>를 구체화하고 다양화 한 인터페이스들
+### Supplier<T>를 구체화하고 다양화 한 인터페이스들
 
 | IntSupplier | int getAsInt() |
 | --- | --- |
@@ -121,7 +121,7 @@ public static void main(String[] args) {
     ```
     
 
-## Consumer<T>를 구체화하고 다양화 한 인터페이스들
+### Consumer<T>를 구체화하고 다양화 한 인터페이스들
 
 | IntConsumer | void accept(int value) |
 | --- | --- |
@@ -157,7 +157,7 @@ class FunctionDemo {
 | ToIntBiFunction<T, U> | int applyAsInt(T t, U u) |
 | ToDoubleBiFunction<T, U> | double applyAsDouble(T t, U u) |
 
-# 기타 함수형 인터페이스
+## 기타 함수형 인터페이스
 
 | Function<T, R> | R apply(T t) |
 | --- | --- |
@@ -166,7 +166,7 @@ class FunctionDemo {
 | UnaryOperator<T> | T apply(T t) |
 | BinaryOperator<T> | T apply(T t1, T t2) |
 
-# removeIf (Collection<E>의 인터페이스 디폴트 메서드)
+## removeIf (Collection<E>의 인터페이스 디폴트 메서드)
 
 - 실제 Predicate가 사용되는 예임.
 
@@ -178,7 +178,7 @@ ArrayList<Integer> 인스턴스의 removeIf
 public boolean removeIf(Predicate<? super Integer> filter예제예
 ```
 
-## 예제
+### 예제
 
 ```java
 public static void main(String[] args) {
